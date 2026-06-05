@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f7ff;
+}
+
+.card {
+    background: #fff;
+    max-width: 650px;
+    padding: 45px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    line-height: 1.7;
+    color: #444;
+}
+
+p {
+    font-size: 19px;
+}
+
+/* Estilo Base dos Links */
+.link {
+    color: #4a3aff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+/* Container do Tooltip */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* O Balão (Tooltip) */
+.tooltip {
+    visibility: hidden;
+    width: auto;
+    min-width: 100px;
+    background-color: #6c5ce7;
+    color: #fff;
+    text-align: center;
+    border-radius: 30px; /* Bem arredondado como na foto */
+    padding: 6px 15px;
+    position: absolute;
+    z-index: 10;
+    bottom: 125%; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    white-space: nowrap;
+    pointer-events: none; /* Evita que o balão atrapalhe o clique */
+}
+
+/* Triângulo abaixo do balão */
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #6c5ce7 transparent transparent transparent;
+}
+
+/* Efeito de Hover */
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    bottom: 140%; /* Ele sobe um pouquinho ao aparecer */
+}
+
+.tooltip-container:hover .link {
+    color: #3525d9; /* Escurece o link levemente no hover */
+}
